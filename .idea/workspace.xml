@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dac4a963-204d-4903-9b16-d063d00ccff0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jwt-demo/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/jwt-demo/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jwt-demo/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/jwt-demo/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jwt-demo/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/jwt-demo/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jwt-demo/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/jwt-demo/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jwt-demo/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/jwt-demo/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jwt-demo/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/jwt-demo/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jwt-demo/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/jwt-demo/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +175,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1631702108395</updated>
-      <workItem from="1631702114047" duration="8291000" />
+      <workItem from="1631702114047" duration="8439000" />
     </task>
     <servers />
   </component>
