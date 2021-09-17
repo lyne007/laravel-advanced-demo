@@ -15,14 +15,11 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('/', function(){
-    return '123';
-});
 Route::post('auth/login', [AuthController::class,'login']);
 Route::post('auth/refresh', [AuthController::class,'refresh']);
 
 Route::group([
-    'middleware' => 'jwt.auth',
+    'middleware' => ['token.refresh','jwt.auth'], //jwt.auth
 //    'prefix' => ''
 ], function ($router) {
     Route::post('logout', [AuthController::class,'logout']);
