@@ -245,4 +245,5 @@ Route::group([
 > 当access_token过期后会在任意请求当相应头返回通过Authorization返回新token，只要替换本地缓存即可继续后续请求。
 
 效果：
-![Alt text](https://github.com/lyne007/laravel-advanced-demo/blob/master/imgs/jwt-%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.png)
+![Alt text](https://github.com/lyne007/laravel-advanced-demo/blob/master/imgs/jwt-%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.png?raw=true)
+
