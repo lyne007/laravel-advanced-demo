@@ -1,8 +1,8 @@
 # jwt-auth + 微信小程序授权 【代码齐全，可下载拿去参考，便于新手学习】
 
 * laravel 8.*
-* jwt-auth: *
-* laravel-wechat:^5.1"
+* jwt-auth: 1.0.2
+* laravel-wechat:^5.1
 
 ## 安装 tymon/jwt-auth 扩展包
 让我们在这个 Laravel 应用中安装这个扩展包。如果您正在使用 Laravel 5.5 或以上版本，请运行以下命令来获取 dev-develop 版本的 JWT 包：
