@@ -53,7 +53,6 @@ class SendUserSmsOrder implements ShouldQueue
         try {
             $user = User::find($this->userId);
             $this->name = $user->name;
-
             // 发送短信
             $content = "{$this->name}先生/女士，您在xxx商城购买的商品已发货，请注意查收，物流信息请登录xxx小程序查询【xxx】";
             $result = $this->sendSmsApi($this->userTel, $content);
