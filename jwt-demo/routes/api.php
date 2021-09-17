@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -13,16 +15,18 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::post('login', [AuthController::class,'login']);
+Route::get('/', function(){
+    return '123';
+});
+Route::post('auth/login', [AuthController::class,'login']);
+Route::post('auth/refresh', [AuthController::class,'refresh']);
 
 Route::group([
     'middleware' => 'jwt.auth',
 //    'prefix' => ''
 ], function ($router) {
     Route::post('logout', [AuthController::class,'logout']);
-    Route::post('refresh', [AuthController::class,'refresh']);
     Route::post('me', [AuthController::class,'me']);
-
-    Route::post('goods', [GoodsController::class,'index']);
+    Route::get('users', [UsersController::class,'index']);
 });
+

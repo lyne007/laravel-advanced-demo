@@ -36,8 +36,8 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $code = $request->get('code');
-        $encryptedData = $request->get('encrypted_data');
         $iv = $request->get('iv');
+        $encryptedData = $request->get('encrypted_data');
         $rawData = $request->get('rawData');
         if (!$code || !$encryptedData || !$iv) {
             return response()->json(['code'=>403, 'msg'=>'参数不合法','data'=>null]);
@@ -51,7 +51,9 @@ class AuthController extends Controller
         }
         $weappOpenid = $data['openid'];
         $weixinSessionKey = $data['session_key'];
-//        $decryptedData = $app->encryptor->decryptData($weixinSessionKey, $iv, $encryptedData);
+        // rawData 也可以通过$iv,$encryptedData解密获得，也可以前端获取传过来
+        // $decryptedData = $app->encryptor->decryptData($weixinSessionKey, $iv, $encryptedData);
+        // 前端传递过来的rawData
         $rawData = json_decode($rawData,true);
         $user = User::UpdateOrCreate(['openid' => $weappOpenid], [
             'openid' => $weappOpenid,
@@ -67,8 +69,6 @@ class AuthController extends Controller
             // 'watermark' => '',
             // 'unionId' => $decryptedData['unionId'] ?? '',
             // 'mobile' => $decryptedData['mobile'] ?? '',
-//            'created_at' => date('Y-m-d H:i:s'),
-//            'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
         $credentials = array("id"=>$user->id,"openid"=>$weappOpenid,"avatar"=>$user->avatar,"nickname"=>$user->nickname,"password"=>$weappOpenid);
