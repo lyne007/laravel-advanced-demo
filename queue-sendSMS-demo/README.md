@@ -9,7 +9,7 @@ QUEUE_CONNECTION=database   # 异步（database）
 生成队列数据表（jobs）、失败队列数据表（faild_jobs）
 ```shell
 php artisan queue:table
-php artisan queue:faild-table
+php artisan queue:failed-table
 php artisan migrate
 ```
 填充数据 
