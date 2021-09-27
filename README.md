@@ -1,5 +1,5 @@
 # laravel-advanced-demo
-基于laravel-modules的模块化开发，完成一些laravel进阶应用场景示例
+基于laravel，完成一些进阶应用场景示例
 
 目录
 * jwt-auth + 微信小程序授权 [查看](https://github.com/lyne007/laravel-advanced-demo/tree/master/jwt-demo)
