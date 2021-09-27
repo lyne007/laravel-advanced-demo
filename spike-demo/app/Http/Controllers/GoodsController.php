@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\CloseExpiredOrder;
 use App\Models\Goods;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 use PHPUnit\Util\Exception;
@@ -19,7 +22,14 @@ class GoodsController extends Controller
      */
     public function index()
     {
-        $goods = Goods::select('id','name','price','stock')->get();
+        $goods = Cache::get('spike-goods-list', function(){
+            $result = Goods::select('id','name','price','stock')->get()->toArray();
+            $json = json_encode($result);
+            Cache::add('spike-goods-list', $json);
+            return $json;
+        });
+
+        $goods = json_decode($goods,true);
         return response()->json(['code'=>0,'msg'=>'查询成功','data'=>$goods]);
     }
 
@@ -30,7 +40,13 @@ class GoodsController extends Controller
      */
     public function goodsDetail($id)
     {
-        $detail = Goods::find($id);
+        $detail = Cache::get('spike-goods-'.$id, function () use($id) {
+            $result = Goods::find($id)->toArray();
+            $json = json_encode($result);
+            Cache::add('spike-gods-'.$id, $json);
+            return $json;
+        });
+        $detail = json_decode($detail, true);
         return response()->json(['code'=>0,'msg'=>'查询成功','data'=>$detail]);
     }
 
@@ -56,6 +72,11 @@ class GoodsController extends Controller
         return response()->json(['code'=>0,'msg'=>'同步库存成功','data'=>$count]);
     }
 
+    /**
+     * 秒杀逻辑-第一步，验证库存
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function checkStock(Request $request)
     {
         $goods_id = $request->get('goods_id');
@@ -89,7 +110,7 @@ class GoodsController extends Controller
     }
 
     /**
-     * 生成订单信息
+     *  第二步，生成订单信息
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
@@ -108,11 +129,20 @@ class GoodsController extends Controller
 
         DB::beginTransaction();
         try {
-            // 雪花算法生成唯一数，// 1537200202186752
-            $snowflake = new \Godruoyi\Snowflake\Snowflake;
+            // 获取商品信息
+            $goods_detail = DB::table('goods')->where('id',$goods_id)->first();
+            // 验证订单是否已生成
+            $check_exist = DB::table('orders')
+                ->where('user_id',$user_id)
+                ->where('goods_name',$goods_detail->name)
+                ->get()->toArray();
+            if ($check_exist) {
+                return response()->json(['code'=>4,'msg'=>'您已下单成功，赶快支付吧','data'=>'']);
+            }
             // 减库存、生成订单
             $result1 = DB::table('goods')->where('id',$goods_id)->decrement('stock');
-            $goods_detail = DB::table('goods')->where('id',$goods_id)->first();
+            // 雪花算法生成唯一数，// 1537200202186752
+            $snowflake = new \Godruoyi\Snowflake\Snowflake;
             $order_id = DB::table('orders')->insertGetId([
                 'order_no'=>$snowflake->id(),
                 'user_id'=>$user_id,
@@ -123,7 +153,9 @@ class GoodsController extends Controller
                 'consignee'=>'test',
                 'phone'=>13555555555,
                 'address'=>'上海市徐汇区某某一品豪宅888号88楼88室',
-                'state'=>0
+                'state'=>0,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ]);
 
             if (!$result1 || !$order_id) {
@@ -131,7 +163,10 @@ class GoodsController extends Controller
             }
 
             DB::commit();
-            // 下单成功，跳转到支付页，如果用户15分钟内没有支付需要释放库存，可以用延迟队列处理。
+            // 下单成功，跳转到支付页，如果用户15分钟内没有支付需要释放库存，可以用延迟任务处理。
+            CloseExpiredOrder::dispatch($success_user,$goods,$order_id)->delay(Carbon::now()->addMinutes(2))
+                    ->onConnection('database')
+                    ->onQueue('close-expired-order');
             // 创建
             return response()->json(['code'=>0,'msg'=>'下单成功','data'=>'']);
 
@@ -144,6 +179,14 @@ class GoodsController extends Controller
             return response()->json(['code'=>4,'msg'=>'手速慢了','data'=>'']);
         }
 
+    }
+
+    /**
+     * 第三步，支付
+     */
+    public function payOrder()
+    {
+        //.....略
     }
 
 }

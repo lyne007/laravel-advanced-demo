@@ -80,15 +80,4 @@ class CloseExpiredOrder implements ShouldQueue
         \Log::error('订单：'.$this->orderId.'队列任务执行失败'."\n".date('Y-m-d H:i:s'));
     }
 
-    /**
-     * 发送短信，请求第三方短信接口
-     * @param $tel
-     * @param $content
-     */
-    public function sendSmsApi($tel, $content)
-    {
-        // 这里根据自己使用的短信接口自行实现。。。
-        // ...
-        return ['returnstatus'=>'Success'];  // 假数据
-    }
 }

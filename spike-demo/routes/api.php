@@ -19,13 +19,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('auth/login', [AuthController::class,'login']);
+Route::get('goods',[GoodsController::class,'index']);
+Route::get('goodsDetail/{id}', [GoodsController::class,'goodsDetail']);
+
 
 Route::group([
     'middleware' => ['token.refresh','jwt.auth'], //jwt.auth
 //    'prefix' => ''
 ], function ($router) {
-    $router->get('goods',[GoodsController::class,'index']);
-    $router->get('goodsDetail/{id}', [GoodsController::class,'goodsDetail']);
     $router->post('syncStock', [GoodsController::class, 'syncStock']);
     $router->post('checkStock', [GoodsController::class, 'checkStock']);
     $router->post('createOrder', [GoodsController::class, 'createOrder']);
