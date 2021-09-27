@@ -164,7 +164,7 @@ class GoodsController extends Controller
 
             DB::commit();
             // 下单成功，跳转到支付页，如果用户15分钟内没有支付需要释放库存，可以用延迟任务处理。
-            CloseExpiredOrder::dispatch($success_user,$goods,$order_id)->delay(Carbon::now()->addMinutes(2))
+            CloseExpiredOrder::dispatch($success_user,$goods,$order_id)->delay(Carbon::now()->addMinutes(15))
                     ->onConnection('database')
                     ->onQueue('close-expired-order');
             // 创建
