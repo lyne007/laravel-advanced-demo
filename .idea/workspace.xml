@@ -3,14 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="126d5eee-aefb-4db4-8752-4993a4096a39" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/queue-sendSMS-demo/app/Jobs/SendUserSmsOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/queue-sendSMS-demo/app/Jobs/SendUserSmsOrder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spike-demo/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/spike-demo/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/jwt-demo/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -172,7 +173,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1631866313851</updated>
-      <workItem from="1631866316409" duration="4822000" />
+      <workItem from="1631866316409" duration="25725000" />
+      <workItem from="1632478113435" duration="569000" />
+      <workItem from="1632622755995" duration="309000" />
+      <workItem from="1632624584033" duration="266000" />
+      <workItem from="1632705621542" duration="817000" />
+      <workItem from="1632707503871" duration="31000" />
+      <workItem from="1632707563635" duration="5657000" />
     </task>
     <servers />
   </component>
