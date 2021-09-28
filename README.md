@@ -4,7 +4,9 @@
 目录
 * jwt-auth + 微信小程序授权 [查看](https://github.com/lyne007/laravel-advanced-demo/tree/master/jwt-demo)
   > `tymon/jwt-auth`+`overtrue/laravel-wechat`  项目实例
-
+* jwt-auth + 微信网页授权 [查看](https://github.com/lyne007/laravel-advanced-demo/tree/master/jwt-demo2)
+  > `tymon/jwt-auth`+`overtrue/laravel-wechat`  项目实例
+  > 前后端分离哦
 * Laravel --Jobs （同步\异步）消息队列 Queue [查看](https://github.com/lyne007/laravel-advanced-demo/tree/master/queue-sendSMS-demo)
   > 消息队列系统完成发货消息通知 - jobs任务类
 * 广播消息通知 [查看]()

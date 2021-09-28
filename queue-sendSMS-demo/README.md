@@ -133,7 +133,7 @@ php artisan queue:work --queue=send-sms
 [program:Jobs_SendSmsOrder_QueueWork]
 process_name=%(program_name)s_%(process_num)02d
 command=php artisan queue:work --queue=send-sms   # --sleep=3 --tries=3
-directory=/home/vagrant/code/bonli_wx_shop
+directory=/home/vagrant/code/laravel-advanced-demo/queue-sendSMS-demo
 autostart=true
 autorestart=true
 #user=forge

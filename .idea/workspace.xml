@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="126d5eee-aefb-4db4-8752-4993a4096a39" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/jwt-demo2/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jwt-demo2/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jwt-demo2/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jwt-demo2/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spike-demo/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/spike-demo/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/queue-sendSMS-demo/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/queue-sendSMS-demo/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,9 +160,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/jwt-demo2/database/migrations" />
     <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/jwt-demo2/database/migrations" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -179,7 +188,8 @@
       <workItem from="1632624584033" duration="266000" />
       <workItem from="1632705621542" duration="817000" />
       <workItem from="1632707503871" duration="31000" />
-      <workItem from="1632707563635" duration="5657000" />
+      <workItem from="1632707563635" duration="6949000" />
+      <workItem from="1632807956421" duration="1674000" />
     </task>
     <servers />
   </component>
