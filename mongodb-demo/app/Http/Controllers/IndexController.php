@@ -38,7 +38,7 @@ class IndexController extends Controller
         // 利用redis简单做个计数器
         // Redis::set('cnt', 10000);
         $num = Redis::incr('cnt');
-        // 用num转码
+        // 用num转61进制码
         $code = $this->num2code($num);
         // 拼接短链接
         $short_url = self::SHORT_URL_HOST . $code;
@@ -60,7 +60,7 @@ class IndexController extends Controller
      */
     public function num2code($num)
     {
-        // 自建code表
+        // 62进制序列表
         $codeTable = [
             0 => "d",
             1 => "G",
