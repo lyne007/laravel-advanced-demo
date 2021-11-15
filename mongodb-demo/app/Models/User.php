@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Schema;
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use Jenssegers\Mongodb\Eloquent\SoftDeletes;
 
@@ -14,4 +15,10 @@ class User extends Eloquent
     protected $primaryKey = '_id'; // 自增id
     protected $guarded = [];
     protected $dates = ['deleted_at'];
+
+
+
+
 }
+
+
