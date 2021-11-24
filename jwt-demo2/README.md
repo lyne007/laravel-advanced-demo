@@ -4,6 +4,10 @@
 * jwt-auth: 1.0.2
 * laravel-wechat:^5.1
 
+> 微信后台设置注意点：
+> 1，js安全域名不需要`http` `https`
+> 2，微信授权回调域名不要`http` `https`，比如回调地址是https://www.abc.com/callback 微信授权回调域名设置为：`www.abc.com` 即可。
+
 ## 安装 tymon/jwt-auth 扩展包
 让我们在这个 Laravel 应用中安装这个扩展包。如果您正在使用 Laravel 5.5 或以上版本，请运行以下命令来获取 dev-develop 版本的 JWT 包：
 ```shell
