@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="126d5eee-aefb-4db4-8752-4993a4096a39" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel8-api-base/app/Exceptions/BusinessException.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel8-api-base/app/Exceptions/BusinessException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel8-api-base/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel8-api-base/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel9-api-base/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/laravel9-api-base/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,16 +165,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/laravel9-api-base" />
     <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/laravel9-api-base" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/imgs" />
       <recent name="$PROJECT_DIR$/mongodb-demo" />
       <recent name="$PROJECT_DIR$/mongodb-demo/database/migrations" />
-      <recent name="$PROJECT_DIR$/jwt-demo2/database/migrations" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/mongodb-demo/app" />
@@ -206,6 +210,8 @@
       <workItem from="1635392334389" duration="64000" />
       <workItem from="1674870546774" duration="722000" />
       <workItem from="1679453988830" duration="913000" />
+      <workItem from="1688354345609" duration="6060000" />
+      <workItem from="1688437455613" duration="16000" />
     </task>
     <servers />
   </component>
