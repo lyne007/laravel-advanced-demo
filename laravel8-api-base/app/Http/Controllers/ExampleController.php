@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\ResponseEnum;
-use App\Models\User;
+use App\Models\Api\User;
 use App\Services\UserService;
 use Illuminate\Http\Request;
 
@@ -15,8 +15,8 @@ class ExampleController extends BaseController
 //        dd($id);
 
         // 使用方法1，
-        $user = UserService::getInstance()->getUserInfo();
+//        $user = UserService::getUserInfo();
         // 使用方法2（不需要单例），$user = $userService->getUserInfo();
-        return $this->success($user);
+//        return $this->success($user);
     }
 }
