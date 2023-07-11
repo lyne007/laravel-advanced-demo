@@ -2,6 +2,7 @@
 
 namespace App\Models\Api;
 
+use App\Observers\User\UserObserver;
 use App\Traits\SerializeDate;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -41,4 +42,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function boot()
+    {
+        parent::boot();
+        static::observe(UserObserver::class);
+    }
 }
