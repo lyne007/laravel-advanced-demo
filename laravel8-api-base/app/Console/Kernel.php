@@ -16,6 +16,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
+        // 删除telescope调试工具 48 小时前创建的所有记录
+        $schedule->command('telescope:prune --hours=48')->daily();
     }
 
     /**

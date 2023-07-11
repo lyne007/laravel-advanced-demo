@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    list($code, $message) = \App\Helpers\ResponseEnum::CLIENT_NOT_FOUND_ERROR;
+    return response()->json([
+        'status'  => 'fail',
+        'code'    => $code,
+        'message' => $message,
+        'data'    => null,
+        'error'  => '',
+    ]);
 });
