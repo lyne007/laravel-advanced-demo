@@ -19,3 +19,7 @@
 * laravel8.5集成一套能快速开发API项目 [查看 laravel-api-init](https://github.com/lyne007/laravel_api_init)
 
   > 集成了jwt、自定刷新token、自定义异常处理、跨域、统一Response响应、单一设备登录、多角色认证...
+* laravel8-api-base （新）[查看 laravel8-api-base](https://github.com/lyne007/laravel-advanced-demo/tree/master/laravel8-api-base)
+
+* laravel8-modules-base模块化开发 （新）[查看 laravel8-modules-base](https://github.com/lyne007/laravel-advanced-demo/tree/master/laravel8-modules-base)
+
