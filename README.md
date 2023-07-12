@@ -14,7 +14,7 @@
 * 秒杀场景 [查看](https://github.com/lyne007/laravel-advanced-demo/tree/master/spike-demo)
   > 使用reids队列处理并发"超卖"问题，延迟队列处理失效订单（15分钟内未支付）
 * mongodb [查看](https://github.com/lyne007/laravel-advanced-demo/tree/master/mongodb-demo)
-  > 简单实现生成短链接短demo
+  > 简单实现生成短链接demo
 
 * laravel8.5集成一套能快速开发API项目 [查看 laravel-api-init](https://github.com/lyne007/laravel_api_init)
 
