@@ -24,4 +24,5 @@
 * laravel8-modules-base模块化开发 （新）[查看 laravel8-modules-base](https://github.com/lyne007/laravel-advanced-demo/tree/master/laravel8-modules-base)
 
 * 自然语言处理
+ > 结巴分词、向量化...
 
